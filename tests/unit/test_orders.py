@@ -3,6 +3,7 @@ import pytest
 from io import StringIO
 from orders import *
 
+# This test function will check new slaes column is being calculated correctly by calculate_sales function
 def test_calculate_sales():
     csv_data = "order_id,customer_id,order_date,product_id,product_name,product_price,quantity\n" \
                "1,C1,2023-01-01,P1,Product 1,10.00,2\n" \
@@ -22,7 +23,8 @@ def test_calculate_sales():
     assert sales[2] == 60.00
     assert sales[3] == 10.00
     assert sales[4] == 20.00
-    
+
+# This test function will check monthly revenue figures are being calculated correctly by  calculate_monthly_revenue() function
 def test_calculate_monthly_revenue():
     csv_data = "order_id,customer_id,order_date,product_id,product_name,product_price,quantity\n" \
                "1,C1,2023-01-01,P1,Product 1,10.00,2\n" \
@@ -42,6 +44,7 @@ def test_calculate_monthly_revenue():
     assert monthly_revenue[1] == 70.00
     assert monthly_revenue[2] == 20.00
 
+# This test function will check product revenue figures are being calculated correctly by  calculate_product_revenue() function
 def test_calculate_product_revenue():
     csv_data = "order_id,customer_id,order_date,product_id,product_name,product_price,quantity\n" \
                "1,C1,2023-01-01,P1,Product 1,10.00,2\n" \
@@ -61,6 +64,7 @@ def test_calculate_product_revenue():
     assert product_revenue['Product 2'] == 15.00
     assert product_revenue['Product 3'] == 60.00
 
+# This test function will check customer revenue figures are being calculated correctly by  calculate_customer_revenue() function
 def test_calculate_customer_revenue():
     csv_data = "order_id,customer_id,order_date,product_id,product_name,product_price,quantity\n" \
                "1,C1,2023-01-01,P1,Product 1,10.00,2\n" \
@@ -80,6 +84,7 @@ def test_calculate_customer_revenue():
     assert customer_revenue['C2'] == 35.00
     assert customer_revenue['C3'] == 10.00
 
+# This test function will check top 10 customers by revenue are being calculated correctly by  identify_top_customers() function
 def test_identify_top_customers():
     csv_data = "order_id,customer_id,order_date,product_id,product_name,product_price,quantity\n" \
                "1,C1,2023-01-01,P1,Product 1,10.00,2\n" \

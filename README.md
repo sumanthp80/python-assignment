@@ -14,7 +14,7 @@ This project contains source code and supporting files for an orders application
 
 # Dependencies
 
-Make sure you have the pandas library installed (pip install pandas) before running the code. Also, ensure that the orders.csv file is in the same directory as the Python script.
+Make sure you have the pandas library installed (pip install pandas) before running the code. Also, ensure that the orders.csv file is in the same directory as the Python script in root directory.
 
 # Code overview
 
@@ -27,14 +27,14 @@ This program reads the CSV file using pd.read_csv() and converts the order_date 
 
 The main_code service builds an image using the Dockerfile and runs the main code using the python orders.py command. The orders.csv file from root directory is mounted into the container to provide the data.
 
-## Tests
+## Running Testcases without using Dockerfiles
 
 Tests are defined in the `tests` folder in this project. Use PIP to install the test dependencies and run tests.
-*****************************************************************
+
 
 In these tests, we create sample CSV data using the StringIO module and test the output of each function against the expected results using assertions. The pytest framework will automatically detect and run these tests when executed.
 
-Make sure you have the pytest library installed (pip install pytest) before running the tests. You can run the tests by executing pytest in the terminal or by running your Python script with the following command: python -m pytest tests/. 
+Make sure you have the pytest library installed (pip install requirements.txt in tests directory) before running the tests. You can run the tests by executing pytest in the terminal or by running your Python script with the following command: python -m pytest tests/ 
 
 ## Running Testcases using Dockerfiles 
 Go to tests sub-directory from root directory and execute below commands:
