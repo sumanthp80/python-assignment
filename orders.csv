@@ -1,0 +1,4 @@
+order_id,customer_id,order_date,product_id,product_name,product_price,quantity
+1,A001,2023-05-21,A,Socks,020.00,2
+2,A001,2023-05-02,B,Shoes,100.00,1
+3,B001,2023-06-02,A,Socks,020.00,1

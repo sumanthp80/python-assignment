@@ -1,0 +1,9 @@
+version: '3'
+services:
+  main_code:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./orders.csv:/app/orders.csv
+    command: python orders.py

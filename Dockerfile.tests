@@ -1,0 +1,20 @@
+# Use a Python base image
+FROM python:3.9-slim
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the code files to the working directory
+COPY tests/requirements.txt .
+COPY orders.py .
+COPY tests/unit/test_orders.py .
+
+# Install the required dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Use non-root user for better container security 
+RUN useradd orders-user
+USER orders-user
+
+# Run the tests using pytest
+CMD ["pytest", "-v", "test_orders.py"]

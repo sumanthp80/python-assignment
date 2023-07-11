@@ -1,0 +1,10 @@
+version: '3'
+services:
+  tests:
+    build:
+      context: ..
+      dockerfile: Dockerfile.tests
+    volumes:
+      - ../orders.csv:/app/orders.csv
+      - .pytest_cache:/app/.pytest_cache
+    command: pytest -v test_orders.py
